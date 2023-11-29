@@ -7,30 +7,38 @@ export default {
         return {
             Items: [
                 {
-                    img: "../src/assets/img/buy-comics-digital-comics.png",
+                    img: "buy-comics-digital-comics.png",
                     description: "DIGITAL COMICS",
                 },
                 {
-                    img: "../src/assets/img/buy-comics-merchandise.png",
+                    img: "buy-comics-merchandise.png",
                     description: "DC MERCHANDISE",
                 },
 
                 {
-                    img: "../src/assets/img/buy-comics-subscriptions.png",
+                    img: "buy-comics-subscriptions.png",
                     description: "SUBSCRIPTION",
                 },
                 {
-                    img: "../src/assets/img/buy-comics-shop-locator.png",
+                    img: "buy-comics-shop-locator.png",
                     description: "COMIC SHOP LOCATOR",
                 },
                 {
-                    img: "../src/assets/img/buy-dc-power-visa.svg",
+                    img: "buy-dc-power-visa.svg",
                     description: "DC POWER VISA",
                 }
             ]
+
         }
     },
+    methods: {
+        getImagePath(img) {
+            return new URL(`../assets/img/${img}`, import.meta.url).href;
+        }
+    }
+
 }
+
 
 </script>
 
@@ -38,7 +46,7 @@ export default {
     <div class="bg-blue">
         <div class="container menuwrapper">
             <div v-for="item in Items">
-                <img :src="item.img" alt="" class="images image-fluid">
+                <img :src="getImagePath(item.img)" alt="" class="images">
                 <span class="ms-1 text-white">{{ item.description }}</span>
 
             </div>
@@ -58,7 +66,7 @@ export default {
 }
 
 .images {
-    width: 3rem;
+    width: 2rem;
 }
 
 .bg-blue {

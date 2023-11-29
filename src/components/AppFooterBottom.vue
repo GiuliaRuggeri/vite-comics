@@ -5,10 +5,15 @@ export default {
     data() {
         return {
             Logos: [
-                "../src/assets/img/footer-facebook.png", "../src/assets/img/footer-twitter.png", "../src/assets/img/footer-youtube.png", "../src/assets/img/footer-pinterest.png", "../src/assets/img/footer-periscope.png"
+                "footer-facebook.png", "footer-twitter.png", "footer-youtube.png", "footer-pinterest.png", "footer-periscope.png"
             ]
         }
     },
+    methods: {
+        getImagePath(img) {
+            return new URL(`../assets/img/${img}`, import.meta.url).href;
+        }
+    }
 }
 </script>
 
@@ -21,7 +26,7 @@ export default {
                 </div>
                 <div class="col-6 d-flex">
                     <h4 class="textblue text-center">FOLLOW US</h4>
-                    <img class="ms-2" v-for="logo in Logos" :src="logo" alt="">
+                    <img class="ms-2" v-for="logo in Logos" :src="getImagePath(logo)" alt="">
                 </div>
             </div>
         </div>
@@ -31,7 +36,6 @@ export default {
 <style scoped>
 .wrapper {
     background-color: #303030;
-    height: 4rem;
 }
 
 .mybtn {

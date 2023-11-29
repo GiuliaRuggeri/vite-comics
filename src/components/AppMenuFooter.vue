@@ -53,6 +53,10 @@ export default {
                     </ul>
 
                 </div>
+
+                <div class="col-6 dclogo">
+
+                </div>
             </div>
         </div>
 
@@ -61,7 +65,7 @@ export default {
 
 <style scoped>
 .bgimage {
-    background-image: url(../assets/img/footer-bg.jpg);
+    background-image: url('../assets/img/footer-bg.jpg');
 }
 
 ul {
@@ -79,5 +83,13 @@ ul {
     color: gray;
     font-size: small;
     text-align: left;
+}
+
+.dclogo {
+    background-image: url("../assets/img/dc-logo-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 30rem;
 }
 </style>
